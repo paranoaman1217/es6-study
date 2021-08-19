@@ -1,0 +1,23 @@
+<script>
+
+  /*
+  * 応用問題
+  * pluck関数を実装してみましょう。
+  * pluck関数とは「オブジェクトの配列」「プロパティ名を含んだ文字列」を受け付けて、
+  * 私たプロパティの値だけを含んだ配列を返します。
+  * [{ color: '赤' }, { color: '青' }, { color: '黄色' }]というオブジェクトの配列があったとします
+  * この配列の中から「color」プロパティだけの値を抜き取って['赤','青','黄']の名前だけの配列が「colorNames」に入るようにしてください。
+  */
+
+  function pluck(array, property) {
+    // pluck関数の中身を実装してください
+    return array.map(function (arr) {
+      return arr[property];
+    });
+  }
+
+  var colorObjects = [{ color: '赤' }, { color: '青' }, { color: '黄色' }];
+
+  var colorNames = pluck(colorObjects, 'color');
+
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>filter</title>
+</head>
+<body>
+
+  <script>
+    /*
+    * findは一件のみ取得したい場合に使うと思う。ブログ記事のidで一件取得するとか
+    */
+    var users = [
+      { name: '太郎' },
+      { name: '二郎' },
+      { name: '三郎' }
+    ];
+
+    var user;
+
+    // 旧式のやり方
+    for (var i = 0; i < users.length; i++) {
+      if (users[i].name === '二郎') {
+        user = users[i];
+        break;
+      }
+    }
+
+    // es6の場合
+    var new_user;
+    new_user = users.find(function (user) {
+      return user.name === '二郎';
+    });
+
+    console.log(user, new_user);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<script>
+  // 配列の中の数字を2倍にして新しい配列に格納する
+
+  var numbers = [1, 2, 3];
+  var doubleNumbers = [];
+
+  // 従来のfor文
+  for (var i = 0; i < numbers.length; i++) {
+
+    // ミューテートは避ける（定義済みの変数を上書く行為）
+    // numers[i] = numbers[i] * 2;
+
+    doubleNumbers.push(numbers[i] * 2);
+  }
+
+  // mapを使う
+  var double = numbers.map(function (number) {
+    return number * 2;
+  });
+
+  // forEachと対して変わらない。違いは「return」で戻して変数に格納している点
+  // ミューテートせずに変数に渡せる利点がある
+
+  console.log(doubleNumbers);
+  console.log(double);
+</script>

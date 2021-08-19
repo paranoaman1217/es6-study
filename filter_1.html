@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>filter</title>
+</head>
+<body>
+
+  <script>
+    var prodacts = [
+      { name: 'きゅうり', type: '野菜' },
+      { name: 'バナナ', type: 'フルーツ' },
+      { name: 'セロリ', type: '野菜' },
+      { name: 'オレンジ', type: 'フルーツ' }
+    ];
+
+    var filterdProducts = prodacts.filter(function (prodact) {
+      return prodact.type === 'フルーツ';
+    });
+
+    console.log(filterdProducts);
+
+  </script>
+</body>
+</html>

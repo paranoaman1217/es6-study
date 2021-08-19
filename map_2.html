@@ -1,0 +1,14 @@
+<script>
+  // 配列の中の特定の値だけ取得したい
+  var cars = [
+    { type: '軽自動車', price: 10000 },
+    { type: '高級車', price: 200000 }
+  ];
+
+  var prices = cars.map(function (car) {
+    return car.price;
+  });
+
+  console.log(prices);
+
+</script>

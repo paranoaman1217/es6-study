@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>filter</title>
+</head>
+<body>
+
+  <script>
+    var prodacts = [
+      { name: 'きゅうり', type: '野菜', quantity: 0, price: 1 },
+      { name: 'バナナ', type: 'フルーツ', quantity: 10, price: 15 },
+      { name: 'セロリ', type: '野菜', quantity: 30, price: 9 },
+      { name: 'オレンジ', type: 'フルーツ', quantity: 3, price: 5 }
+    ];
+
+    // 種類が野菜で、量が0個より多くて、値段が10より小さい
+
+    var filterdProducts = prodacts.filter(function (prodact) {
+      return prodact.type === '野菜'
+        && prodact.quantity > 0
+        && prodact.price < 10;
+    });
+
+    console.log(filterdProducts);
+
+  </script>
+</body>
+</html>

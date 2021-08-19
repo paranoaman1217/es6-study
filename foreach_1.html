@@ -1,0 +1,15 @@
+<script>
+  var tests = ['test1', 'test2', 'test3'];
+
+  // 同じ結果になるが新旧で以下のような違いがある。
+
+  // es5
+  for (var i = 0; i < tests.length; i++) {
+    console.log(tests[i]);
+  }
+
+  // es6
+  tests.forEach(function (test) {
+    console.log(test);
+  });
+</script>

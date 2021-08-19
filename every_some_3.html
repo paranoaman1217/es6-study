@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>filter</title>
+</head>
+<body>
+
+  <script>
+    /*
+    * ログインのバリデーションチェックなんかでも使える
+    */
+    function Field(value) {
+      this.value = value;
+    }
+
+    // バリデーション(空チェック)
+    Field.prototype.validation = function () {
+      return this.value.length > 0;
+    }
+
+    var username = new Field('my_username');
+    var password = new Field('');
+
+    var fields = [
+      username,
+      password
+    ];
+
+    var isValidate = fields.every(function (field) {
+      return field.validation();
+    });
+
+    if (isValidate) {
+      // サーバーにリクエストを送る
+    } else {
+      // バリデーションエラーを表示する
+    }
+
+    console.log(isValidate);
+
+    // バリデーションのメソッドを追加することができる
+    // console.log(
+    //   username.validation(), password.validation()
+    // );
+
+  </script>
+</body>
+</html>

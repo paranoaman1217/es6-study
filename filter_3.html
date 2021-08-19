@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>filter</title>
+</head>
+<body>
+
+  <script>
+    var post = [
+      { id: 4, title: '初めての投稿' }
+    ];
+    var comments = [
+      { post_id: 4, content: '良い記事ですね' },
+      { post_id: 3, content: 'なるほど' },
+      { post_id: 4, content: '勉強になりました' }
+    ];
+
+    function commentsForPost(post, comments) {
+      return comments.filter(function (comment) {
+        return comment.post_id === post.id;
+      });
+    }
+
+    console.log(commentsForPost(post, comments));
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>filter</title>
+</head>
+<body>
+
+  <script>
+    /*
+    * 配列の中で条件に一致したりする事で全体の合否を出す場合にsomeやreduceが使えるようだ
+    * 例えば16GBのramが必要なソフトがあってこのリストに該当するPCがあるのか無いのか調べたい場合（true, falseで）
+    * everyは&&の結果を返す
+    * someは||の結果を返す
+    * ANDかORでeveryとsomeは使い分ける事
+    */
+    var computars = [
+      { name: 'Apple', ram: 24 },
+      { name: 'Compac', ram: 4 },
+      { name: 'Acer', ram: 32 }
+    ];
+
+    // 全てで動かせるフラグ
+    var allComputarsCanRun = true;
+
+    // どれかでは動かせるフラグ
+    var someComputarsCanRun = false;
+
+    // 旧式のやり方
+    for (var i = 0; i < computars.length; i++) {
+      var computar = computars[i];
+
+      // コンピュータのramが16GBより小さかったら
+      if (computar.ram < 16) {
+        allComputarsCanRun = false;
+      } else {
+        someComputarsCanRun = true;
+      }
+    }
+
+    // every使うとこうなるAND
+    var and = computars.every(function (computar) {
+      return computar.ram >= 16;
+    });
+
+    // some使うとこうなるOR
+    var or = computars.some(function (computar) {
+      return computar.ram >= 16;
+    });
+
+    console.log(
+      allComputarsCanRun,
+      someComputarsCanRun
+    );
+
+    // 構文のシンプルさが半端ない
+    console.log(and, or);
+
+  </script>
+</body>
+</html>
